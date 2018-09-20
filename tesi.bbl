@@ -1,0 +1,400 @@
+\begin{thebibliography}{10}
+
+\bibitem{szabo-mqc}
+Attila Szabo and Neil~S. Ostlund,
+\newblock {\em {Modern Quantum Chemistry}},
+\newblock {McGraw-Hill}  (1989).
+
+\bibitem{asi-71-1933}
+L.~Brillouin,
+\newblock {\em Actualit\'es scientifiques et Industrielles} {\bf 71}  (1933).
+
+\bibitem{asi-159-1934}
+L.~Brillouin,
+\newblock {\em Actualit\'es scientifiques et Industrielles} {\bf 159}  (1934).
+
+\bibitem{tp-1-1933-104}
+Koopmans,
+\newblock {\em T. Physica} {\bf 1}, pp. 104  (1933).
+
+\bibitem{jce-75-11-1998-1494}
+C.~Angeli,
+\newblock ``{Physical Interpretation of Koopmans' Theorem: A Criticism of the
+  Current Didactic Presentation}'',
+\newblock {\em J. Chem. Edu.} {\bf 75}(11), pp. 1494  (1998).
+
+\bibitem{ijqc-2-1968-307}
+B.~Levy and G.~Berthier,
+\newblock {\em Int. J. Quant. Chem.} {\bf 2}, pp. 307  (1968).
+
+\bibitem{rmp-39-1967-771}
+B.~M. Brandow,
+\newblock {\em Rev. Mod. Phys.} {\bf 39}, pp. 771  (1967).
+
+\bibitem{jcp-58-1973-5745}
+B.~Huron, J.~P. Malrieu, and P.~Rancurel,
+\newblock {\em J. Chem. Phys.} {\bf 58}, pp. 5745  (1973).
+
+\bibitem{pr-46-1934-618}
+C.~M{\o}ller and M.~S. Plesset,
+\newblock {\em Phys. Rev.} {\bf 46}, pp. 618  (1934).
+
+\bibitem{jpa-18-1985-809}
+J.~P. Malrieu, Ph. Durand, and J.~P. Daudey,
+\newblock {\em J. Phys. A} {\bf 18}, pp. 809  (1985).
+
+\bibitem{jcc-8-1987-39}
+R.~Cimiraglia and M.~Persico,
+\newblock {\em J. Comp. Chem.} {\bf 8}, pp. 39  (1987).
+
+\bibitem{ijqc-60-1996-167}
+R.~Cimiraglia,
+\newblock {\em Int. J. Quantum Chem.} {\bf 60}, pp. 167  (1996).
+
+\bibitem{tca-98-1997-57}
+C.~Angeli, R.~Cimiraglia, M.~Persico, and A.~Toniolo,
+\newblock {\em Theor. Chem. Acc.} {\bf 98}, pp. 57  (1997).
+
+\bibitem{tca-98-1997-117}
+C.~Angeli and M.~Persico,
+\newblock {\em Theor. Chem. Acc.} {\bf 98}, pp. 117  (1997).
+
+\bibitem{jpc-94-1990-5483}
+K.~Andersson, P.~Malmqvist, B.~O. Roos, A.~J. Sadlej, and K.~Wolinski,
+\newblock {\em J. Phys. Chem.} {\bf 94}, pp. 5483  (1990).
+
+\bibitem{jcp-96-1992-1218}
+K.~Andersson, P.~Malmqvist, and B.~O. Roos,
+\newblock {\em J. Chem. Phys.} {\bf 96}, pp. 1218  (1992).
+
+\bibitem{jcp-114-23-2001-10252}
+C.~Angeli, R.~Cimiraglia, S.~Evangelisti, T.~Leininger, and J.-P. Malrieu,
+\newblock ``{Introduction of $n$-electron valence states for multireference
+  perturbation theory}'',
+\newblock {\em J. Chem. Phys.} {\bf 114}(23), pp. 10252  (2001).
+
+\bibitem{jcp-102-1995-4909}
+K.~G. Dyall,
+\newblock {\em J. Chem. Phys.} {\bf 102}, pp. 4909  (1995).
+
+\bibitem{dalton-site}
+T.~Helgaker, H.J.Aa. Jensen, P.~Jørgensen, J.~Olsen, K.~Ruud, H.~Ågren, A.A.
+  Auer, K.L. Bak, V.~Bakken, O.~Christiansen, S.~Coriani, P.~Dahle, E.K.
+  Dalskov, T.~Enevoldsen, B.~Fernandez, C.~Hättig, K.~Hald, A.~Halkier,
+  H.~Heiberg, H.~Hettema, D.~Jonsson, S.~Kirpekar, R.~Kobayashi, H.~Koch, K.V.
+  Mikkelsen, P.~Norman, M.J. Packer, T.B. Pedersen, T.A. Ruden, A.~Sanchez,
+  T.~Saue, S.P.A. Sauer, B.~Schimmelpfennig, K.~O. Sylvester-Hvid, P.R. Taylor,
+  and O.~Vahtras,
+\newblock ``{Dalton, a molecular electronic structure program, Release 1.2
+  (2001)}'',
+\newblock http://www.kjemi.uio.no/software/dalton/.
+
+\bibitem{gaussian-site}
+M.~J. Frisch, G.~W. Trucks, H.~B. Schlegel, G.~E. Scuseria, M.~A. Robb, J.~R.
+  Cheeseman, V.~G. Zakrzewski, J.~A. Montgomery, Jr., R.~E. Stratmann, J.~C.
+  Burant, S.~Dapprich, J.~M. Millam, A.~D. Daniels, K.~N. Kudin, M.~C. Strain,
+  O.~Farkas, J.~Tomasi, V.~Barone, M.~Cossi, R.~Cammi, B.~Mennucci, C.~Pomelli,
+  C.~Adamo, S.~Clifford, J.~Ochterski, G.~A. Petersson, P.~Y. Ayala, Q.~Cui,
+  K.~Morokuma, D.~K. Malick, A.~D. Rabuck, K.~Raghavachari, J.~B. Foresman,
+  J.~Cioslowski, J.~V. Ortiz, A.~G. Baboul, B.~B. Stefanov, G.~Liu,
+  A.~Liashenko, P.~Piskorz, I.~Komaromi, R.~Gomperts, R.~L. Martin, D.~J. Fox,
+  T.~Keith, M.~A. Al-Laham, C.~Y. Peng, A.~Nanayakkara, C.~Gonzalez,
+  M.~Challacombe, P.~M.~W. Gill, B.~G. Johnson, W.~Chen, M.~W. Wong, J.~L.
+  Andres, M.~Head-Gordon, E.~S. Replogle, J.~A. Pople, and Inc. Gaussian,
+\newblock ``{Gaussian 98 (Revision A.6)}''  (1998).
+
+\bibitem{molden}
+G.Schaftenaar and J.H. Noordik,
+\newblock ``Molden: a pre- and post-processing program for molecular and
+  electronic structures'',
+\newblock {\em J. Comput.-Aided Mol. Design} {\bf 14}, pp. 123  (2000),
+\newblock http://www.caos.kun.nl/~schaft/molden/molden.html.
+
+\bibitem{jpsj-18-1963-1174}
+Takagi K. and Oka T.,
+\newblock {\em J. Phys. Soc. Jpn.} {\bf 18}, pp. 1174  (1963).
+
+\bibitem{jpc-97-17-1993-4293}
+Christopher~M. Hadad, James~B. Foresman, and Kennet~B. Wiberg,
+\newblock ``{Excited States of Carbonyl Compounds. 1. Formaldehyde and
+  Acetaldehyde}'',
+\newblock {\em J. Phys. Chem.} {\bf 97}(17), pp. 4293--4312  (1993).
+
+\bibitem{jpc-99-20-1995-8050}
+Michel R.~J. Hachey, Pablo~J. Bruna, and Friedrich Grein,
+\newblock ``{Spectroscopy of Formaldehyde. 1. Ab Initio Studies on Single
+  Valence and Rydberg States of Planar $H_2CO$, with Emphasis on
+  ${}^1(\pi,\pistar)$ and ${}^1(\sigma,\pistar)$}'',
+\newblock {\em J. Phys. Chem.} {\bf 99}(20), pp. 8050--8057  (1995).
+
+\bibitem{sa-34a-1978-749}
+A.~K. Shah and D.~C. Moule,
+\newblock {\em Spectrochim. Acta} {\bf 34A}, pp. 749  (1978).
+
+\bibitem{mp-27-1974-209}
+Hariharan and Pople,
+\newblock {\em Mol. Phys.} {\bf 27}, pp. 209  (1974),
+\newblock Also see references therein.
+
+\bibitem{jcp-90-1989-1007}
+T.~H. Dunning,
+\newblock {\em J. Chem. Phys.} {\bf 90}, pp. 1007  (1989).
+
+\bibitem{jcp-55-1971-4798}
+C.~F. Bender and H.~F. Schaefer,
+\newblock {\em J. Chem. Phys.} {\bf 55}, pp. 4798  (1971).
+
+\bibitem{jcp-72-1980-5639}
+A.~D. McLean and G.~S. Chandler,
+\newblock {\em J. Chem. Phys.} {\bf 72}, pp. 5639  (1980).
+
+\bibitem{jms-550-551-2000-281}
+W.~O. George, B.~F. Jones, Rh. Lewis, and J.~M. Price,
+\newblock ``{Ab Initio computations on simple carbonyl compounds}'',
+\newblock {\em Journal of Molecular Structure} {\bf 550}(551), pp. 281--296
+  (2000).
+
+\bibitem{jms-120-1986-118}
+R.~Nelson and L.~Pierce,
+\newblock {\em J. Mol. Spectrosc.} {\bf 120}, pp. 118  (1986).
+
+\bibitem{mp-31-1976-1377}
+E.~Blom and C.~Altona,
+\newblock {\em Mol. Phys.} {\bf 31}, pp. 1377  (1976).
+
+\bibitem{cpl-241-0-1995-26}
+Steven~R. Gwaltney and Rodney~J. Bartlett,
+\newblock ``{An application of the equation-of-motion coupled cluster method to
+  the excited states of formaldehyde, acetaldehyde and acetone}'',
+\newblock {\em Chemical Physics Letters} {\bf 241}, pp. 26--32  (1995).
+
+\bibitem{jcp-111-1-1999-205}
+D.~W. Liao, A.~M. Mebel, M.~Hayashi, Y.~J. Shiu, Y.~T. Chen, and S.~H. Lin,
+\newblock ``{Ab Initio study of the $n-\pi^{*}$ electronic transition in
+  acetone: Symmetry-forbidden vibronic spectra}'',
+\newblock {\em J. Chem. Phys.} {\bf 111}(1), pp. 205--215  (1999).
+
+\bibitem{jms-148-1991-427}
+J.~Pliva, J.~W.~C. Johns, and L.~Goodman,
+\newblock {\em J. Mol. Spectrosc.} {\bf 148}, pp. 427  (1991).
+
+\bibitem{jcp-94-12-1991-7700}
+Atsunari Hiraya and Kosuke Shobatake,
+\newblock ``Direct absorption spectra of jet-cooled benzene in 130-260 nm'',
+\newblock {\em J. Chem. Phys.} {\bf 94}(12), pp. 7700  (1991).
+
+\bibitem{jcp-112-6-2000-2798}
+Anders Bernhardsson, Niclas Forsberg, Per-{\AA}ke Malmqvist, Bj{\"o}rn~O. Roos,
+  and Luis Serrano-Andr\'es,
+\newblock ``{A theoretical study of the $^1B_{2u}$ and $^1B_{1u}$ vibronic
+  bands in benzene}'',
+\newblock {\em J. Chem. Phys.} {\bf 112}(6), pp. 2798  (2000).
+
+\bibitem{tca-91-1995-91}
+Johan Lorentzon, Per-{\AA}ke Malmqvist, Markus F{\"u}lscher, and Bj{\"o}rn~O.
+  Roos,
+\newblock ``{A CASPT2 study of the valence and lowest Rydberg electronic states
+  of benzene and phenol}'',
+\newblock {\em Theor. Chim. Acta} {\bf 91}, pp. 91  (1995).
+
+\bibitem{prsls-258-1960-270}
+D.~W.~J. Cruckshank and R.~A. Sparks,
+\newblock {\em Proc. R. Soc. London Ser. A} {\bf 258}, pp. 270  (1960).
+
+\bibitem{cpl-16-1972-464}
+R.~H. Hubner, S.~R. Mielczarek, and C.~E. Kuyatt,
+\newblock {\em Chem. Phys. Lett.} {\bf 16}, pp. 464  (1972).
+
+\bibitem{jms-26-1968-67}
+G.~A. George and G.~C. Morris,
+\newblock {\em J. Mol. Spectrosc.} {\bf 26}, pp. 67  (1968).
+
+\bibitem{jpb-25-1992-2197}
+J.~W. McConey, S.~Trajmar, K.~F. Man, and J.~M. Ratliff,
+\newblock {\em J. Phys. B} {\bf 25}, pp. 2197  (1992).
+
+\bibitem{jcp-105-20-1996-9007}
+Alexander~M. Mebel, Yit-Tsong Chen, and Sheng-Hsien Lin,
+\newblock ``{On the theoretical investigation of vibronic spectra of ethylene
+  by ab initio calculations of the Franck-Condon factors}'',
+\newblock {\em J. Chem. Phys.} {\bf 105}(20), pp. 9007--9020  (1996).
+
+\bibitem{jcp-114-4-2001-1631}
+Clemens Woywod, William~C. Livingood, and John~H. Frederick,
+\newblock ``{S$_1$-S$_2$ vibronic coupling in cis-1,3,5-hexatriene. Electronic
+  structure calculations}'',
+\newblock {\em J. Chem. Phys.} {\bf 114}(4), pp. 1631--1644  (2001).
+
+\bibitem{pccp-3-2001-2567}
+Peter Cronstrand, Ove Christiansen, Patrick Norman, and Hans Ågren,
+\newblock ``{Ab Initio modeling of excited state absorption of polyenes}'',
+\newblock {\em Phys. Chem. Chem. Phys.} {\bf 3}, pp. 2567--2575  (2001).
+
+\bibitem{jcp-112-2-2000-613}
+Clemens Woywod, William~C. Livingood, and John~H. Frederick,
+\newblock ``{S$_1$-S$_2$ vibronic coupling in trans-1,3,5-hexatriene.
+  Electronic structure calculations}'',
+\newblock {\em J. Chem. Phys.} {\bf 112}(2), pp. 613--625  (2000).
+
+\bibitem{jcp-92-1990-4622}
+W.~J. Buma, B.~E. Kohler, and K.~Song,
+\newblock ``Location of the 2u1ag state in hexatriene'',
+\newblock {\em J. Chem. Phys.} {\bf 92}(7), pp. 4622--4623  (1990).
+
+\bibitem{jcp-110-7-1999-3484}
+Kazunari Naka, Akihiro Morita, and Shigeki Kato,
+\newblock ``{Effect of solvent fluctuation on the electronic transitions of
+  formaldehyde in aqueous solution}'',
+\newblock {\em J. Chem. Phys.} {\bf 110}(7), pp. 3484  (1999).
+
+\bibitem{tca-110-7-1999-3484}
+Kazunari Naka, Akihiro Morita, and Shigeki Kato,
+\newblock ``{Effect of solvent fluctuation on the electronic transitions of
+  formaldehyde in aqueous solution}'',
+\newblock {\em J. Chem. Phys.} {\bf 110}(7), pp. 3484  (1999).
+
+\bibitem{jcp-108-10-1998-3987}
+Ove Christiansen, John~F. Stanton, and J{\"u}rgen Gauss,
+\newblock ``{A coupled cluster study of the 1$^1A_{1g}$ and 1$^1B_{2u}$ states
+  of benzene}'',
+\newblock {\em J. Chem. Phys.} {\bf 108}(10), pp. 3987  (1998).
+
+\bibitem{jcp-105-16-1996-6921}
+Ove Christiansen, Henrik Koch, Asger Halkier, Poul J{\"o}rgensen, Trygve
+  Helgaker, and Alfredo~S\'anchez de~Mer\'as,
+\newblock ``{Large-scale calculations of excitation energies in coupled cluster
+  theory: The singlet excited states of benzene}'',
+\newblock {\em J. Chem. Phys.} {\bf 105}(16), pp. 6921  (1996).
+
+\bibitem{jcp-104-16-1996-6244}
+T.~Hashimoto, H.~Nakano, and K.~Hirao,
+\newblock ``{Theoretical study of the valence $\pi \rightarrow \pi^{*}$ excited
+  states of polyacenes: Benzene and naphthalene}'',
+\newblock {\em J. Chem. Phys.} {\bf 104}(16), pp. 6244  (1996).
+
+\bibitem{jcp-115-2-2001-621}
+Yoong-Kee Choe, Yoshihide Nakao, and Kimihiko Hirao,
+\newblock ``{Multireference M{\"o}ller-Plesset method with a complete active
+  space configuration interaction reference function}'',
+\newblock {\em J. Chem. Phys.} {\bf 115}(2), pp. 621  (2001).
+
+\bibitem{cpl-350-2001-297}
+Celestino Angeli, Renzo Cimiraglia, and Jean-Paul Malrieu,
+\newblock ``{$n$-electron valence state perturbation theory: a fast
+  implementation of the strongly contracted variant}'',
+\newblock {\em Chem. Phys. Letters} {\bf 350}, pp. 297  (2001).
+
+\bibitem{tbp-nevpt1}
+Celestino Angeli, Renzo Cimiraglia, and Jean-Paul Malrieu,
+\newblock ``{$n$-Electron Valence State Perturbation Theory. I. A spinless
+  formulation and an efficient implementation of the strongly contracted
+  variant}'',
+\newblock in print.
+
+\bibitem{tbp-nevpt2}
+Celestino Angeli, Renzo Cimiraglia, and Jean-Paul Malrieu,
+\newblock ``{$n$-Electron Valence State Perturbation Theory. II. A spinless
+  formulation and an efficient implementation of the partially contracted
+  variant}'',
+\newblock in print.
+
+\bibitem{cpl-98-1983-424}
+D.~C. Rawlings and E.~R. Davidson,
+\newblock {\em Chem. Phys. Lett.} {\bf 98}, pp. 424  (1983).
+
+\bibitem{ap-1958-357}
+H.~Feschbach,
+\newblock {\em Ann. Phys (N.Y.)} , p. 357  (1958).
+
+\bibitem{jmp-3-1962-1969}
+P.~O. Lowdin,
+\newblock {\em J. Math. Phys.} {\bf 3}, pp. 1969  (1962).
+
+\bibitem{cpl-233-1995-597}
+A.~Zaitsevskii and J.~P. Malrieu,
+\newblock {\em Chem. Phys. Lett.} {\bf 233}, pp. 597  (1995).
+
+\bibitem{jcp-90-1997-3647}
+K.~Wolinski and P.~Pulay,
+\newblock {\em J. Chem. Phys.} {\bf 90}, pp. 3647  (1997).
+
+\bibitem{cpl-190-1992-374}
+K.~Hirao,
+\newblock {\em Chem. Phys. Lett.} {\bf 190}, pp. 374  (1992).
+
+\bibitem{jcp-94-1991-5021}
+R.~J. Harrison,
+\newblock {\em J. Chem. Phys.} {\bf 94}, pp. 5021  (1991).
+
+\bibitem{cpl-183-1991-443}
+R.~B. Murphy and R.~P. Messmer,
+\newblock {\em Chem. Phys. Lett.} {\bf 183}, pp. 443  (1991).
+
+\bibitem{tca-100-1998-324}
+C.~Angeli, R.~Cimiraglia, and M.~Persico,
+\newblock {\em Theor. Chem. Acc.} {\bf 100}, pp. 324  (1998).
+
+\bibitem{tca-105-2001-259}
+C.~Angeli and R.~Cimiraglia,
+\newblock {\em Theor. Chem. Acc.} {\bf 105}, pp. 259  (2001).
+
+\bibitem{tca-107-2002-313}
+C.~Angeli and R.~Cimiraglia,
+\newblock {\em Theor. Chem. Acc.} {\bf 107}, pp. 313  (2002).
+
+\bibitem{jcp-83-1985-1746}
+R.~Cimiraglia,
+\newblock {\em J. Chem. Phys.} {\bf 83}, pp. 1746  (1985).
+
+\bibitem{jcp-86-9-1987-4895}
+Guido J.~M. Dormans, Gerrit~C. Groenenboom, and Henk~M. Buck,
+\newblock ``Dynamical calculations on the photoisomerization of small polyenes
+  in a nonadiabatic formalism'',
+\newblock {\em J. Chem. Phys.} {\bf 86}(9), pp. 4895  (1987).
+
+\bibitem{jacs-116-1994-1077}
+Massimo Olivucci, Fernando Bernardi, Paolo Celani, Ioannis Ragazos, and
+  Michael~A. Robb,
+\newblock ``{Excited-State Cis-Trans Isomerization of cis-Hexatriene. A CAS-SCF
+  Computational Study}'',
+\newblock {\em J. Am. Chem. Soc.} {\bf 116}, pp. 1077  (1994).
+
+\bibitem{jpc-97-1993-1850}
+Ruifeng Liu and Xuefeng Zhou,
+\newblock ``{Theoretical Study on the Structure and Vibrations of
+  cis-1,3,5-Hexatriene}'',
+\newblock {\em J. Phys. Chem.} {\bf 97}, pp. 1850  (1993).
+
+\bibitem{jcp-98-6-1993-4822}
+Francesco Zerbetto and Marek~Z. Zgierski,
+\newblock ``{The Franck-Condon structure of the 1A $\rightarrow$ 1B transition
+  of cis- and trans-hexatriene: An ab initio modeling}'',
+\newblock {\em J. Chem. Phys.} {\bf 98}(6), pp. 4822  (1993).
+
+\bibitem{jacs-117-1995-11584}
+Paolo Celani, Marco Garavelli, Stefano Ottani, Fernando Bernardi, Michael~A.
+  Robb, and Massimo Olivucci,
+\newblock ``{Molecular ``Trigger'' for Radiationless Deactivation of
+  Photoexcited Conjugated Hydrocarbons}'',
+\newblock {\em J. Am. Chem. Soc.} {\bf 117}, pp. 11584  (1995).
+
+\bibitem{jppc-114-1998-109}
+Marco Garavelli, Fernando Bernardi, Paolo Celani, Michael~A. Robb, and Massimo
+  Olivucci,
+\newblock ``{Minimum energy paths in the excited and ground states of short
+  protonated Schiff bases and of the analogous polyenes}'',
+\newblock {\em Journal of Photochemistry and Photobiology A: Chemistry} {\bf
+  114}, pp. 109  (1998).
+
+\bibitem{jpc-92-1988-614}
+Robert~J. Cave and Ernest~R. Davidson,
+\newblock ``{Theoretical Investigation of Several Low-Lying States of
+  trans,trans-1,3,5-Hexatriene}'',
+\newblock {\em J. Phys. Chem.} {\bf 92}, pp. 614  (1988).
+
+\bibitem{mcweeny-momqm}
+R.~McWeeny,
+\newblock {\em {Methods of Molecular Quantum Mechanics}},
+\newblock Academic Press  (1989).
+
+\end{thebibliography}

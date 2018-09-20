@@ -1,0 +1,124 @@
+\section{Approssimazione Hartree-Fock e metodo SCF}
+
+Nelle sezioni precedenti si \`e fatto riferimento alla possibilit\`a di
+ottenere la migliore descrizione possibile per lo stato fondamentale di
+un sistema sfruttando il teorema variazionale.
+Questa possibilit\`a passa attraverso l'ottimizzazione
+di certi parametri caratterizzanti la funzione d'onda stessa.
+L'approccio visto nella sezione \ref{sec:antisimmetria} ha permesso inoltre
+di delineare una possibile ed efficiente rappresentazione di una funzione
+d'onda polielettronica come combinazione lineare di entit\`a antisimmetrizzate,
+i determinanti di Slater, ciascuno dei quali rappresenta una particolare
+disposizione elettronica sugli spinorbitali monoelettronici deputati a base del
+nostro sistema.
+
+Una prima e semplicistica approssimazione, che tuttavia fornisce buoni risultati
+per sistemi semplici ed in determinate condizioni, \`e considerare l'espansione
+\beqa
+\label{eqn:espansione}
+\Psi(1,2,\ldots,n) &=& \sumidx{i_1 < i_2 < \ldots < i_n } c_{i_1,i_2,\ldots,i_n} \detsl{\psi_{{i}_1} \psi_{{i}_2} \ldots \psi_{{i}_n}} \\
+&=& \sumidx{I} c_I \Phi_I
+\eeqa
+limitata ad un solo determinante, ovvero si ammette
+\beqas
+c_I &=& 0  \qquad \forall I \neq 0 \\
+c_0 &=& 1
+\eeqas
+e di conseguenza
+\beq
+\Psi(1,2,\ldots,n) = \Phi_0
+\eeq
+Questa drastica approssimazione funziona piuttosto bene in molecole
+nello stato di singoletto, in cui gli orbitali spaziali sono doppiamente
+occupati, ed in prossimit\`a della geometria di equilibrio.
+Il processo che porta all'individuazione dei migliori orbitali molecolari
+va sotto il nome di \textit{Self Consistent Field} od ottimizzazione SCF.
+La funzione d'onda polielettronica
+\beqa
+\Psi(1,2,\ldots,n) &=& \detsl{\psi_1 \psi_2 \ldots \psi_n} \nonumber \\
+&=& (n!)^{-1/2} \mbox{det}\left| \psi_1 \psi_2 \ldots \psi_n \right|
+\eeqa
+dovr\`a quindi essere ottimizzata sui singoli spinorbitali $\psi_i$.
+
+\`E dimostrabile che i migliori spinorbitali per l'approssimazione
+monodeterminantale sono le autofunzioni di un operatore monoelettronico
+$\fock$ detto operatore di Fock. L'equazione
+\beq
+\label{eqn:fock}
+\fock \psi = \epsilon \psi
+\eeq
+\`e detta \textit{equazione di Hartree-Fock} e fornisce un set di
+spinorbitali monoelettronici che meglio descrivono la situazione elettronica
+rappresentata da un singolo determinante. Tali spinorbitali sono detti
+\textit{canonici}.
+
+L'autovalore corrispondente $\epsilon$ ha una diretta interpretazione fisica,
+in quanto rappresenta, cambiato di segno, un'approssimazione dell'energia
+necessaria a rimuovere l'elettrone presente nello spinorbitale $\psi$,
+detta energia di ionizzazione per l'estrazione dell'elettrone dall'orbitale $\psi$.
+
+L'equazione \ref{eqn:fock} possiede, su uno spazio spinorbitalico infinito,
+infinite soluzioni. Di queste, solo un numero pari agli elettroni
+presenti, e precisamente quelle a pi\`u bassa energia orbitalica $\epsilon$,
+sono occupate. Il restante spazio complementare \`e detto \textit{spazio
+virtuale}, a cui appartengono spinorbitali vuoti.
+In un caso reale, il numero di orbitali \`e limitato dalla
+dimensionalit\`a della base scelta. In generale, tale base deriva da un set
+di $k$ orbitali spaziali $\{ \phi_i \}$ che generano $ 2k $ spinorbitali $\{
+\phi_i \alpha , \phi_i \beta \}$. Per $ k \rightarrow \infty $, l'algoritmo
+SCF possiede via via maggiori gradi di libert\`a su cui effettuare
+l'ottimizzazione HF, e di conseguenza l'energia attesa $ E_0 =
+\braket{\Psi_0}{\ham}{\Psi_0} $ tende a diminuire fino a raggiungere un limite
+denominato \textit{limite di Hartree-Fock}.
+Come conseguenza, per qualsiasi $k$ intero positivo ragionevole, l'energia
+sar\`a sempre maggiore del limite di Hartree-Fock.
+
+\subsection{Teorema di Brillouin}
+
+L'equazione Hartree-Fock fornisce un set di spinorbitali, di cui $n$
+sono utilizzati per costruire $\ket{\Psi_0}$. Questa funzione d'onda non \`e tuttavia l'unica
+disposizione elettronica attuabile con il set dato, come abbiamo visto
+nell'equazione \ref{eqn:espansione}. Ogni ulteriore disposizione
+elettronica attuabile pu\`o essere pensata come eccitazione di un dato 
+numero di elettroni dagli orbitali occupati del determinante HF agli
+orbitali virtuali vuoti.
+Con tale premessa, l'espansione \ref{eqn:espansione} pu\`o essere
+formulata come
+\beqa
+\label{eqn:mr}
+\Psi &=& c_0 \ket{\Phi_0} + \sumidx{ra} c_a^r \Phi_a^r + \sumidx{rsab} c_{ab}^{rs} \Phi_{ab}^{rs} + \ldots
+\eeqa
+dove gli indici $r$ ed $a$ intendono la promozione di un elettrone
+dallo spinorbitale $\psi_a$ allo spinorbitale $\psi_r$.
+Volendo descrivere la funzione d'onda come combinazione di determinanti, 
+nel tentativo di migliorarne la descrizione, si potrebbe troncare la somma
+\ref{eqn:mr} ai contributi singolarmente eccitati diagonalizzando
+l'hamiltoniano nello spazio del determinante di Fock e delle sue singole
+eccitazioni $\{ \Phi_0 , \{ \Phi_a^r \} \}$:
+\beq
+\left(
+\begin{array}{cc}
+\braket{\Phi_0}{\ham}{\Phi_0} & \braket{\Phi_0}{\ham}{\Phi^r_a} \\
+& \\
+\braket{\Phi^r_a}{\ham}{\Phi_0} & \braket{\Phi^r_a}{\ham}{\Phi^{r^{\prime}}_{a^{\prime}}} \\
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+c_0 \\
+c^r_a \\
+\end{array}
+\right) = E_0
+\left(
+\begin{array}{c}
+c_0 \\
+c^r_a \\
+\end{array}
+\right)
+\eeq
+Il teorema di Brillouin (Cfr. \cite{asi-71-1933} e \cite{asi-159-1934})
+assicura che, se gli orbitali soddisfano l'equazione di Hartree-Fock, tutte
+le interazioni $\braket{\Phi_0}{\ham}{\Phi^r_a}$ sono nulle, e dunque
+l'energia non \`e migliorabile ulteriormente limitando l'espansione
+\ref{eqn:mr} alle sole singole eccitazioni.
+

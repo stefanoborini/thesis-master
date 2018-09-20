@@ -1,0 +1,87 @@
+\documentclass[a4paper,11pt,oneside]{book}
+\title{\textbf{Applicazioni di una nuova teoria perturbativa multireference allo
+studio dello stato fondamentale e degli stati eccitati di molecole di medie
+dimensioni}}
+\author{Stefano Borini}
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{threeparttable}
+\usepackage{wrapfig}
+%\usepackage{floatflt}
+%\usepackage{fancyhdr}
+%\usepackage{acsarticle}
+\usepackage[hang, bf]{caption}
+%\usepackage{xymtex}
+%\usepackage{chemist}
+
+\geometry{a4paper,tmargin=28mm,bmargin=42mm,lmargin=4cm,rmargin=4cm}
+%\geometry{a4paper,tmargin=50mm,bmargin=20mm,lmargin=4cm,rmargin=4cm}
+%\addtolength\evensidemargin{7mm}
+\headsep=10mm
+\makeatletter
+\@addtoreset{equation}{section}
+\@addtoreset{table}{section}
+\@addtoreset{figure}{section}
+\makeatother
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{section}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{section}.\arabic{figure}}
+
+\include{macros}
+
+\raggedbottom
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\begin{tabular}{c}
+{\Large \textbf{UNIVERSIT\`A DEGLI STUDI DI FERRARA}} \\
+{\Large \textit{Facolt\`a di Scienze Matematiche, Fisiche, Naturali}} \\
+{\Large \textit{Corso di laurea in Chimica}} \\
+\hline
+\end{tabular}
+
+\vspace{5cm}
+{\textsc{\fontsize{17}{5mm}\selectfont \textbf{Applicazioni di una nuova\\teoria perturbativa multireference\\allo studio dello stato fondamentale\\e degli stati eccitati di molecole\\di medie dimensioni}}}
+
+\vspace{45mm}
+
+{ 
+\begin{tabular}{l} \large \textbf{Relatore} \\ \large \textbf{Prof. Renzo Cimiraglia}
+\end{tabular} \hfill {\ } } \\
+\vspace{13mm}
+{ \begin{tabular}{l} \large \textbf{Corelatore} \\ \large \textbf{Dott. Celestino Angeli}\end{tabular} } \hfill { \begin{tabular}{l} \large \textbf{Laureando} \\ \large \textbf{Stefano Borini} \end{tabular} }
+
+\vspace{26mm}
+\begin{tabular}{c}
+\hline
+{\large \textbf{ANNO ACCADEMICO 2001/2002}} \\
+\hline
+\end{tabular}
+
+\end{center}
+\end{titlepage}
+%\newpage\thispagestyle{empty}\ \newpage
+\pagenumbering{Roman}
+\tableofcontents
+\input{ringraziamenti}
+%\newpage\thispagestyle{empty}\ \newpage
+\input{introduzione/main}
+\input{nev-pt/main}
+\input{software/main}
+%\newpage\thispagestyle{empty}\ \newpage
+\input{applicazioni/main}
+\addcontentsline{toc}{chapter}{Conclusioni}
+\input{conclusioni}
+\addcontentsline{toc}{chapter}{Bibliografia}
+\nocite{*}
+\bibliographystyle{acs}
+\bibliography{tesi}
+
+\end{document}

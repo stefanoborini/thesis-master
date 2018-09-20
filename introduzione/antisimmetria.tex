@@ -1,0 +1,115 @@
+% DONE
+\section{Requisito di antisimmetria}
+\label{sec:antisimmetria}
+
+Una legge naturale generale indica che, per particelle fermioniche quali gli elettroni,
+la funzione d'onda descrittiva di uno stato deve necessariamente essere antisimmetrica
+in seguito allo scambio di due particelle. Pi\`u in dettaglio, nel caso della semplice
+funzione bielettronica $\Psi(1,2)$, deve valere
+\beq
+\label{eqn:antisimm1}
+\Psi(2,1) = - \Psi(1,2)
+\eeq
+ovvero lo scambio di due particelle si traduce in una variazione del segno
+della funzione descrittiva dello stato.
+
+Data una funzione polielettronica, \`e sempre possibile esprimere tale funzione
+come opportuna combinazione di prodotti di funzioni monoparticella. Questa possibilit\`a deve
+tuttavia soddisfare il vincolo naturale di antisimmetria.
+Al fine di garantire ci\`o, sia $\Psi(1,2,\ldots,n)$ una funzione a $n$ particelle.
+Parametrizzando la posizione delle particelle $(2,\ldots,n)$, la funzione
+ottenuta, presentando una sola variabile dinamica, pu\`o essere espansa su una base
+spinorbitalica monoparticella $\left\{ \psi_i \right\} $ ortonormale
+\beq
+\Psi(1,\underbrace{2,\ldots,n}_{\mbox{fissate}}) = \Psi(1) = \sumidx{i} c_i(2,\ldots,n) \psi_i(1)
+\eeq
+Nei coefficienti $c_i$ risiede la dipendenza dalle variabili fissate, e quindi tali coefficienti
+sono funzioni dei parametri. \`E possibile ripetere la procedura sulla
+funzione $c_i(2,\ldots,n)$, parametrizzando le coordinate $(3,\ldots,n)$ ed espandendola
+sulla medesima base spinorbitalica
+\beq
+c_i(2,\underbrace{3,\ldots,n}_{\mbox{fissate}}) = c_i(2) = \sumidx{j} c^{\prime}_{ij}(3,\ldots,n) \psi_j(2)
+\eeq
+Ripetendo la procedura per le $n$ coordinate, si ottiene
+\beq
+\Psi(1,2,\ldots,n) = \sumidx{i,j,k,\ldots,l} c_{ijk\ldots l} \psii(1) \psij(2) \psik(3) \ldots \psi_l(n)
+\eeq
+con $c_{ijk\ldots}$ coefficiente puramente numerico.
+Applicando quanto detto ad un caso a due particelle si ha
+\beqa
+\Psi(1,2) &=& \sumidx{i,j} c_{ij} \psii(1) \psij(2) \nonumber \\
+          &=& c_{11} \psi_1(1) \psi_1(2) + c_{12} \psi_1(1) \psi_2(2) + c_{21} \psi_2(1) \psi_1(2) \nonumber \\
+	  &&  + c_{22} \psi_2(1) \psi_2(2) + \ldots
+\eeqa
+La necessit\`a di soddisfare l'equazione \ref{eqn:antisimm1} impone di
+considerare anche
+\beqa
+\Psi(2,1) &=& c_{11} \psi_1(2) \psi_1(1) + c_{12} \psi_1(2) \psi_2(1) + c_{21} \psi_2(2) \psi_1(1) \nonumber \\
+	  &&  + c_{22} \psi_2(2) \psi_2(1) + \ldots
+\eeqa
+e di conseguenza
+\beqa
+c_{ii} &=& - c_{ii} \rightarrow c_{ii} = 0 \nonumber \\
+c_{ij} &=& - c_{ji} \nonumber
+\eeqa
+Quindi, la sommatoria si riduce a
+\beqa
+\Psi(1,2) &=& c_{12} \left( \psi_1(1) \psi_2(2) - \psi_2(1) \psi_1(2) \right) \nonumber \\
+	  && + c_{13} \left( \psi_1(1) \psi_3(2) - \psi_3(1) \psi_1(2) \right) + \ldots \nonumber \\
+	  &=& \sumidx{i<j} c_{ij} \left( \psi_i(1) \psi_j(2) - \psi_j(1) \psi_i(2) \right) \nonumber \\
+	  &\rightarrow& \sumidx{i<j} c_{ij} \detsl{\psii \psij}
+\eeqa
+dove, con la scrittura
+\beq
+\detsl{\psii \psij} = 2^{-\frac{1}{2}} \left|
+\begin{array}{cc}
+\psii(1) & \psij(1) \\
+\psii(2) & \psij(2) \\
+\end{array}
+\right|
+\eeq
+intendiamo, previa normalizzazione, il \textbf{determinante di Slater} normalizzato per un sistema bielettronico.
+Generalizzando a $n$ elettroni, si avr\`a
+\beqa
+\Psi(1,2,\ldots,n) &=& \sumidx{i_1 < i_2 < \ldots < i_n } c_{i_1,i_2,\ldots,i_n} \detsl{\psi_{{i}_1} \psi_{{i}_2} \ldots \psi_{{i}_n}} \\
+&=& \sumidx{I} c_I \Phi_I
+\eeqa
+con
+\beqa
+\detsl{\psi_{{i}_1} \psi_{{i}_2} \ldots \psi_{{i}_n}} &=&
+(n!)^{-\frac{1}{2}} \left|
+\begin{array}{cccc}
+\psi_{{i}_1}(1) & \psi_{{i}_2}(1) & \ldots & \psi_{{i}_n}(1) \\
+\psi_{{i}_1}(2) & \psi_{{i}_2}(2) & \ldots & \psi_{{i}_n}(2) \\
+\vdots          &  \vdots         & \ddots &  \vdots          \\
+\psi_{{i}_1}(n) & \psi_{{i}_2}(n) & \ldots & \psi_{{i}_n}(n) \\
+\end{array}
+\right|
+\eeqa
+
+Concludendo, una funzione d'onda pu\`o essere espressa come una combinazione
+lineare di determinanti di Slater, ciascuno dei quali descrive una possibile
+scelta di $n$ spinorbitali da occupare (configurazione elettronica).
+Il determinante di Slater soddisfa automaticamente il requisito di
+antisimmetria, dal momento che lo scambio di due particelle viene tradotto
+nello scambio di colonne della matrice di Slater, operazione
+che comporta un cambiamento di segno del determinante stesso.
+
+Nel caso in cui due particelle (1 e 2) occupassero lo
+stesso spinorbitale $\psi_{{i}_1}$ il determinante rappresentativo
+sarebbe
+\beqa
+\detsl{\psi_{{i}_1} \psi_{{i}_1} \ldots \psi_{{i}_n}} =
+(n!)^{-\frac{1}{2}}
+\left|
+\begin{array}{cccc}
+\psi_{{i}_1} (1) & \psi_{{i}_1} (1) & \ldots & \psi_{{i}_n} (1) \\
+\psi_{{i}_1} (2) & \psi_{{i}_1} (2) & \ldots & \psi_{{i}_n} (2) \\
+\vdots           &   \vdots         & \ddots &  \vdots          \\
+\psi_{{i}_1} (n) & \psi_{{i}_1} (n) & \ldots & \psi_{{i}_n} (n) \\
+\end{array}
+\right|
+\eeqa
+che \`e nullo dal momento che presenta due colonne uguali. Il principio di
+esclusione di Pauli \`e diretta conseguenza del principio di antisimmetria.
+

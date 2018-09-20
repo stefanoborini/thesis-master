@@ -1,0 +1,202 @@
+\pagebreak
+\chapter{Programmi di calcolo}
+
+Questo capitolo presenter\`a la catena di calcolo utilizzata per implementare
+la trattazione \textit{ab initio} che verr\`a esposta nei suoi risultati nel
+capitolo \ref{cap:applicazioni}. La catena \`e costituita dai seguenti
+programmi
+\begin{itemize}
+\item \texttt{dalton 1.2}
+\item \texttt{gaussian 98}
+\item \texttt{ijkldali}
+\item \texttt{cipselx}
+\item \texttt{cippiS2s}
+\item \texttt{koopro4E}
+\item \texttt{dypc2}
+\end{itemize}
+
+Per le piattaforme di lavoro, si \`e fatto uso di Linux RedHat 7.2 su hardware
+sia Intel che AMD. La configurazione Intel comprende un dual-processor 
+Intel Pentium III a 1 GHz con 1 Gb di RAM ed un totale di 120 Gb di Hard-Disk
+IDE/SCSI. La configurazione AMD comprende invece due macchine, 
+un single-processor AMD
+Athlon XP 1700+ con 1.5 Gb di RAM ed un totale di 90 Gb di Hard-Disk IDE
+e un Athlon XP 1800+ con 1.5 Gb di RAM e 100 Gb totali di Hard-Disk IDE.
+
+
+\section{Descrizione dei programmi}
+
+\subsection{\texttt{dalton 1.2}}
+
+Il programma \texttt{dalton 1.2} (Ref. \cite{dalton-site}) \`e stato utilizzato per la
+maggior parte delle operazioni effettuate nella preparazione di questa tesi,
+relativamente alla ottimizzazione geometrica e calcoli CASSCF. L'input \`e
+caratterizzato da 2 file, con estensione .mol e .dal: il file .mol
+contiene la geometria molecolare, in formato cartesiano xyz o con z-matrix,
+e la base da utilizzare, per esempio
+\begin{verbatim}
+BASIS
+cc-pVTZ
+Formaldeide
+cc-pVTZ
+    3    2  X  Y
+        8.    1
+O      0.0000000000        0.0000000000        0.0264937595
+        6.    1
+C      0.0000000000        0.0000000000        2.3229964499
+        1.    1
+H      1.7539796658        0.0000000000        3.3947621243
+\end{verbatim}
+
+Il file .dal contiene invece le operazioni da eseguire, per esempio
+\begin{verbatim}
+**GENERAL
+.OPTIMIZE
+*OPTIMIZE
+**DALTON INPUT
+.RUN WAVE FUNCTION
+**WAVE FUNCTIONS
+.HF
+.MP2
+.MCSCF
+*HF INPUT
+.HF OCC
+ 5 2 1 0
+*CONFIGURATION INPUT
+.SYMMETRY
+ 1
+.SPIN MUL
+ 1
+.INACTIVE
+ 4 1 0 0
+.ELECTRONS
+ 6
+.CAS SPACE
+ 2 1 2 0
+*END OF
+\end{verbatim}
+L'esempio qui riportato permette l'esecuzione di una ottimizzazione di geometria
+su un calcolo CASSCF, usando come guess gli orbitali naturali di una trattazione HF/MP2.
+L'input necessita, in alcuni casi, di accurate regole di posizionamento e
+formattazione.
+
+L'output di \texttt{dalton}, con estensione .out, contiene, tra le tante informazioni
+disponibili, gli orbitali molecolari, la matrice densit\`a, l'energia dello
+stato selezionato, la geometria ottimizzata. Oltre a questo file, in formato
+testuale, vengono creati altri file operativi, solitamente in formato
+binario. Tali file contengono varie informazioni che saranno successivamente utilizzate
+dalla catena NEV-PT.
+
+\subsection{\texttt{gaussian 98}}
+
+Il programma \texttt{gaussian 98} (Ref. \cite{gaussian-site}) \`e un programma commerciale
+che consente l'esecuzione di vari tipi di calcoli quantomeccanici. \`E stato utilizzato
+nella costruzione della superficie di potenziale di etilene ed esatriene, in quanto pi\`u
+robusto nell'imposizione dei vincoli e pi\`u facilmente automatizzabile
+attraverso script di shell opportuni. Accetta in input un singolo file, con
+estensione .g98, in cui \`e definita sia la z-matrix (o le coordinate
+cartesiane) sia la procedura da eseguire. Lo stampato a seguire mostra un
+esempio di input file per attuare una ottimizzazione geometrica vincolata
+sulla molecola di etilene.
+\begin{verbatim}
+%Chk=c000-h000.chk
+#p CASSCF(2,2) 6-31G* gfinput IOP(6/7=3) Guess=(read)
+# pop=reg Opt(ModRedundant) NoSymm
+
+etilene
+
+   0   1
+ H
+ C,1,R2
+ C,2,R3,1,A3
+ H,3,R4,2,A4,1,D4,0
+ H,3,R5,2,A5,1,D5,0
+ H,2,R6,3,A6,5,D6,0
+      Variables:
+
+ R2=1.07570091
+ R3=1.33882098
+ R4=1.07570101
+ R5=1.07579366
+ R6=1.07579366
+ A3=121.79543057
+ A4=121.79551679
+ A5=121.58188511
+ A6=121.58189503
+ D4=0.0
+ D5=180.0
+ D6=0.0
+
+1 2 3 4 F
+6 2 3 5 F
+
+\end{verbatim}
+L'output del programma \texttt{gaussian} pu\`o inoltre essere interpretato dal
+programma grafico \texttt{molden} (cfr. \cite{molden}), che permette di visualizzare il percorso
+di ottimizzazione geometrica e gli orbitali. \texttt{Molden} \`e stato utilizzato
+per le rappresentazioni grafiche degli orbitali visibili in questo lavoro di tesi.
+
+\subsection{\texttt{ijkldali}}
+
+Il compito del programma \texttt{ijkldali} \`e effettuare una trasformazione
+degli integrali mono e bielettronici forniti dal programma \texttt{dalton},
+che li fornisce in base atomica,
+restituendo gli integrali bielettronici su base molecolare.
+Il programma fa uso dei file di lavoro di \texttt{dalton}, \texttt{AOONEINT},
+\texttt{AOTWOINT} e \texttt{SIRIFC}. La linea di comando da eseguire viene
+passata via standard input
+\begin{verbatim}
+&LEGGI DIR='/scr/dir/',
+MCORE=450,ILOW=0,0,0,0,ZNEVPT=T,IOCC=10,9,2,1,
+MOLAB='CASTOCIP',DALTOCIP=T,
+&END
+\end{verbatim}
+
+L'opzione \texttt{DALTOCIP} \`e stata impostata a vero (\texttt{T}) quando si
+richiedevano informazioni sullo spazio CI e sui coefficienti CI.
+
+Il programma \texttt{ijkldali} necessita delle opzioni 
+\texttt{.INTERFACE} e \texttt{.DETERMINANTS} nell'input file del \texttt{dalton}.
+
+\subsection{\texttt{cipselx}}
+\texttt{cipselx} viene utilizzato, in questa catena, per attuare un opportuno
+ordinamento dei determinanti che definiscono lo spazio CI, riordinamento necessario
+quando si utilizzino programmi che fanno uso delle configurazioni (Configuration State
+Function, CSF) come ad esempio \texttt{cippiS2s}.
+Anche in questo caso, la procedura da eseguire viene passata via standard
+input
+\begin{verbatim}
+ &FILES FILE04='/scr/dir/file04',
+        FILE03='/scr/dir/file03',
+        FILE44='/scr/dir/FILE04',
+        FILE25='/scr/dir/FILE25',   &END
+ &ICINP ISZ=0,TEST=0.0000,ZAUTO=T,ZOLD=T,ZBIN=T,   &END
+\end{verbatim}
+
+\subsection{\texttt{cippiS2s}}
+
+Nei calcoli qui riportati, viene utilizzato per diagonalizzare l'hamiltoniano
+nello spazio CI fornito in uno dei file
+operativi (\texttt{file04}) ottenuto da \texttt{dalton} attraverso successiva
+elaborazione con \texttt{ijkldali}.
+Tale programma costituisce l'ultima versione della procedura nota come
+\texttt{CIPSI} (Configuration Interaction by Perturbation with
+multiconfigurational zeroth-order wavefunction Selected by Iterative
+process), sviluppata originariamente a Parigi e Tolosa
+e perfezionata in seguito a Pisa e Ferrara.
+
+\subsection{\texttt{koopro4E}}
+
+Il programma si occupa del calcolo delle matrici di Koopmans e delle matrici
+densit\`a ad una, due, tre e quattro particelle.
+
+\subsection{\texttt{dypc2}}
+
+Effettua il calcolo perturbativo NEV-PT vero e proprio. Restituisce in output
+le energie CASSCF corrette al secondo ordine perturbativo con le partizioni
+partially e strongly contracted, sia come contributo globale di
+correzione all'energia, sia come contributi parziali per ogni classe perturbativa
+derivante dagli operatori $\hat{\mathcal{V}}$, uniti alla norma della correzione
+perturbativa al primo ordine alla funzione d'onda. 
+Necessita in input delle matrici prodotte dal programma \texttt{koopro4E}.
+

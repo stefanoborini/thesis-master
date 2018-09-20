@@ -1,0 +1,384 @@
+\chapter{Teoria perturbativa NEV-PT}
+
+\section{Introduzione}
+
+\`E stato possibile vedere come la migliore accuratezza possibile per
+un dato sistema sia ottenibile, in linea di principio, con una espansione
+Full-CI su una base data. Questo approccio \`e percorribile con difficolt\`a 
+a causa della complessit\`a computazionale eccessiva. Per porre
+rimedio a tale limitazione, definire uno schema di selezione per gli orbitali
+pu\`o essere una buona approssimazione, se tale schema prende in
+considerazione gli orbitali maggiormente significativi.
+Questo approccio multireference pu\`o essere eventualmente migliorato 
+applicando una correzione perturbativa alle funzioni d'onda e alle relative
+energie.
+
+Le teorie perturbative multireference (MRPT) costituiscono uno strumento
+prezioso per il calcolo dell'energia di correlazione in molecole di piccole
+e medie dimensioni. Sebbene i primi tentativi di formulare teorie MRPT
+risalgano ad oltre trent'anni fa (Cfr. \cite{rmp-39-1967-771},
+\cite{jcp-58-1973-5745}) \`e solamente nell'ultima decade che tali strumenti
+sono diventati di utilizzo comune. Lo scopo delle teorie perturbative
+multireference \`e di fornire uno strumento agile e preciso, che ricalchi il
+famoso approccio M{\o}ller-Plesset (Cfr. \cite{pr-46-1934-618}) per il caso
+di una funzione d'onda monodeterminantale.
+Come \`e noto, nel caso di una molecola che sia ben descritta da un singolo
+determinante di Slater (come la maggior parte delle molecole nello stato
+fondamentale ed alla geometria di equilibrio) l'applicazione della teoria
+perturbativa al secondo ordine nell'energia, nell'approccio
+M{\o}ller-Plesset (MP2) fornisce spesso oltre il 90 \% dell'energia di
+correlazione.
+L'hamiltoniano di ordine zero della teoria MP \`e molto semplice, e consiste
+nell'operatore di Fock a $n$ particelle
+\beq
+\ham_0 = \sumonen{i} \fock(i)
+\eeq
+Applicando quanto esposto nella sezione \ref{sec:perturbazione} si ottiene
+subito, al secondo ordine
+\beq
+E_0^{(2)} = - \sum_{i,j}^{\mbox{occ}} \sum_{r,s}^{\mbox{virt}} \frac{\left|
+\interact{rs}{ij}\right|^{2}}{\epsilon_r + \epsilon_s - \epsilon_i -
+\epsilon_j }
+\eeq
+
+Nel caso di una MRPT, la funzione d'onda di ordine zero \`e multireference,
+ossia una combinazione lineare di determinanti di Slater. Di conseguenza,
+non \`e ovvio come si possa arrivare ad una efficace definizione
+dell'hamiltoniano di ordine zero. I vari metodi MRPT rientrano in due
+distinte categorie: la prima viene indicata come "\textit{perturb then diagonalize}"
+e si basa sulla possibilit\`a di costruire un hamiltoniano efficace,
+definito perturbativamente, che sar\`a diagonalizzato (Cfr. \cite{rmp-39-1967-771} e
+\cite{jpa-18-1985-809})
+
+La seconda categoria, nota invece come "\textit{diagonalize then perturb}",
+parte da una funzione d'onda variazionale ed applica a questa la teoria
+perturbativa. A questa categoria appartengono le tecniche CIPSI, iniziate a
+Parigi da Huron \textit{et al.} (Cfr. \cite{jcp-58-1973-5745}) e
+successivamente proseguite a Pisa (Cfr. \cite{jcc-8-1987-39}) e 
+Ferrara (Cfr. \cite{ijqc-60-1996-167}, \cite{tca-98-1997-57} e
+\cite{tca-98-1997-117}), le quali si basano sull'uso
+dei semplici determinanti di Slater come funzioni perturbatrici, e la
+tecnica CASPT2 (Cfr. \cite{jpc-94-1990-5483} e \cite{jcp-96-1992-1218}) che
+utilizza invece funzioni "contratte" (particolari combinazioni di
+determinanti) nella teoria perturbativa.
+
+Tra le propriet\`a pi\`u desiderabili di una teoria perturbativa
+multireference citiamo le seguenti:
+\begin{itemize}
+\item size consistence (o strict separability). Si vorrebbe che nel calcolo
+di un sistema consistente di due parti non interagenti (AB) l'energia
+risultasse uguale alla somma delle due parti (E$_{AB} = $E$_A + $E$_B$)
+\item assenza di "intruder states". Le funzioni che correggono la funzione
+d'onda all'ordine zero dovrebbero avere energie ben distinte da quella della
+funzione d'ordine zero stessa, in maniera da evitare divergenza. La semplice
+formula di M{\o}ller-Plesset soddisfa questo requisito: le funzioni
+perturbatrici sono i semplici determinanti di doppia sostituzione
+$\Phi_{ij}^{rs}$ che, data la forma adottata per $\ham_0$ hanno come energia
+$E_0 + \epsilon_r + \epsilon_s - \epsilon_i - \epsilon_j$, ben distinta da
+$E_0$.
+\item L'accuratezza nel calcolo degli stati elettronicamente eccitati
+dovrebbe essere comparabile con quella ottenuta per lo stato fondamentale.
+\end{itemize}
+
+Per svariati motivi, le teorie perturbative fin qui citate falliscono
+nell'esaudire uno o pi\`u di questi requisiti.
+L'approccio perturbativo $n$-Electron Valence Perturbation Theory (NEV-PT)
+(Cfr. \cite{jcp-114-23-2001-10252}), sviluppato in collaborazione tra il
+nostro gruppo di Ferrara e quello del Prof. Malrieu dell'universit\`a di
+Tolosa, risolve in modo formale sia le necessit\`a di size-consistency, sia
+il problema di stati intrusi, che sono le principali necessit\`a di una
+teoria perturbativa, ed inoltre si comporta come un approccio
+M{\o}ller-Plesset se applicato ad una funzione
+single reference.
+
+Nello sviluppo dell'approccio NEV-PT si \`e giocato su due variabili:
+\begin{itemize}
+\item il grado di contrazione dello spazio perturbatore
+\item la scelta dell'hamiltoniano
+\end{itemize}
+
+In alcuni casi, si \`e fatto uso dell'hamiltoniano proposto da Dyall (Cfr.
+\cite{jcp-102-1995-4909}). Tale hamiltoniano risolve il problema formale che
+nasce nel momento in cui la funzione d'onda multireference all'ordine zero
+incorpora effetti di interazione bielettronica, mentre qualsiasi trattazione
+perturbativa che si rifaccia all'hamiltoniano M{\o}ller-Plesset fa uso di
+un hamiltoniano puramente monoelettronico.
+L'Hamiltoniano di Dyall \`e un hamiltoniano approssimato bielettronico, che
+quindi si presta meglio, dal punto di vista formale, alle trattazioni a
+seguire.
+
+\section{Teoria}
+
+La teoria perturbativa NEV-PT necessita di una funzione all'ordine zero
+definita su uno spazio CAS
+\beq
+\Psi_m^{(0)} = \sumidx{I \in \mbox{CAS}} C_{I,m} \ket{I}
+\eeq
+ottenuto diagonalizzando $\ham$ nello spazio CAS
+\beq
+\proj{\mbox{CAS}}\ham\proj{\mbox{CAS}}\ket{\Psi_m^{(0)}} = E_m^{(0)} \ket{\Psi_m^{(0)}}
+\eeq
+dove $\proj{CAS}$ \`e il proiettore all'interno dello spazio CAS
+\beq
+\proj{\mbox{CAS}} = \sum_{M}^{\mbox{CAS}} \ket{\mbox{M}} \bra{\mbox{M}}
+\eeq
+Le funzioni perturbatrici sono esterne a tale spazio, e quelle di interesse
+per il metodo NEV-PT sono classificabili nel seguente schema: la funzione
+d'onda all'ordine zero \`e scrivibile come un prodotto antisimmetrizzato di
+una parte inattiva con $n_c$ elettroni e di una funzione
+multireference di valenza con $n_v$ elettroni
+\beq
+\ket{\Psi_m^{(0)}} = \ket{\Phi_c \Psi_m^v}
+\eeq
+e in modo analogo le funzioni perturbatrici avranno la forma
+\beq
+\ket{\Phi_l^{-k} \Psi_{\mu}^{v+k}}
+\eeq
+dove $k$ \`e il numero di elettroni rimossi dallo spazio inattivo e
+introdotti nello spazio attivo ed $l$ denota gli orbitali inattivi (core + virtuale).
+Al secondo ordine di perturbazione $k$ \`e
+compreso tra -2 e 2.
+Richiediamo inoltre che non esista interazione tra due funzioni
+perturbatrici appartenenti alla medesima classe, individuata dagli indici
+$k$ e $l$. In altri termini, deve valere
+\beq
+\braket{\Phi_l^{-k} \Psi_{\mu}^{v+k}}{\ham}{\Phi_l^{-k} \Psi_{\nu}^{v+k}} =
+0 \qquad \mbox{per }\mu \neq \nu
+\eeq
+
+Il modo migliore per definire tali funzioni perturbatrici \`e espanderle su
+una base di uno spazio $S_l^k$  individuato dai determinanti con la
+medesima parte inattiva $\Phi_l^{-k}$ e tutte le possibili parti attive
+$\Phi_I^{+k}$. In altri termini, tale spazio avr\`a come base il set di
+determinanti
+\beq
+\left\{ \Phi_l^{-k} \Phi_I^{+k} \right\}
+\eeq
+e le funzioni perturbatrici saranno combinazioni lineari opportune
+all'interno di tale spazio. Questo tipo di approccio sfrutta l'intera
+dimensionalit\`a offerta dallo spazio perturbatore $S_l^k$ e viene denominato
+\textbf{totalmente non contratto}.
+
+Per ottenere le funzioni pertubatrici sar\`a sufficiente diagonalizzare
+l'hamiltoniano all'interno di tale spazio
+\beq
+\label{eqn:teoria1_1}
+\proj{S_l^k}\ham\proj{S_l^k} \ket{\Phi_l^{-k} \Psi_{\mu}^{v+k}} = E_{l,\mu}
+\ket{\Phi_l^{-k} \Psi_{\mu}^{v+k}}
+\eeq
+tuttavia tale procedura \`e computazionalmente pesante. Una possibile
+semplificazione si ottiene con l'utilizzo dell'hamiltoniano di Dyall,
+che \`e definito nel modo seguente
+\beqa
+\ham^D &=& \ham^D_i + \ham^D_v \\
+\ham^D_i &=& \sumidx{i} \epsilon_i \constr{i} \destr{i} + \sumidx{r}
+\epsilon_r \constr{r} \destr{r} + C \\
+\ham^D_v &=& \sumidx{ab} h_{ab}^{\mbox{eff}} \constr{a} \destr{b} +
+\frac{1}{2} \sumidx{abcd} \integral{ab}{cd} \constr{a}\constr{b}
+\destr{d}\destr{c}
+\eeqa
+dove con indici $i,j,\ldots$, $a,b,\ldots$, $r,s,\ldots$ si indicano
+rispettivamente orbitali di core, attivi e virtuali e definiamo 
+$ h_{ab}^{\mbox{eff}} = \braket{a}{h+\sumidx{i}\left( J_i - K_i \right)}{b}$.
+
+$\ham^D$ gode della propriet\`a di comportarsi esattamente come l'hamiltoniano
+vero all'interno dello spazio CAS, dopo un'appropriata scelta della costante C.
+Come conseguenza, tale hamiltoniano possiede gli stessi autovalori e gli stessi
+autovettori dell'hamiltoniano vero proiettato all'interno dello spazio CAS.
+
+%La struttura dell'hamiltoniano di Dyall permette inoltre di considerare che,
+%nell'equazione \ref{eqn:teoria1_1} relativa a questo hamiltoniano, le energie
+%$E_{l,\mu}$ possono essere ricavate da una traslazione energetica
+%appropriata (e determinata esclusivamente dalla distribuzione elettronica
+%della parte inattiva) rispetto al valore $E_{\mu,k}$ restituito dalla
+%relazione
+%\beq
+%\ham_v^D \ket{ {\Psi^{\prime}}_{\mu}^{v+k}} = E_{l,\mu} \ket{
+%{\Psi^{\prime}}_{\mu}^{v+k}}
+%\eeq
+%che interessa esclusivamente la parte attiva, in quanto la parte inattiva
+%pu\`o essere operata a parte in virt\`u della forma dell'operatore di Dyall,
+%e comporta appunto una traslazione energetica, come enunciato poco sopra.
+
+\subsection{Approccio partially contracted}
+
+L'approccio sopra enunciato fa uso dell'intera dimensionalit\`a degli spazi
+$S_l^k$. Una alternativa computazionalmente pi\`u semplice \`e l'utilizzo di
+un sottospazio di $S_l^k$, definito dall'applicazione di un operatore di perturbazione
+$\perturb$ alle funzioni d'onda CAS $\Psi_m^{(0)}$. \`E possibile
+dimostrare che l'operatore di perturbazione \`e scrivibile come una somma di
+contributi
+\beqa
+\perturb^u &=& \perturb^{(0)} + \perturb^{(+1)} + \perturb^{(-1)} +
+\perturb^{(+2)} + \perturb^{(-2)} + \perturb^{\prime(+1)} \nonumber \\
+& & + \perturb^{\prime(-1)} + \perturb^{\prime(0)}
+\eeqa
+
+Ciascun contributo \`e costituito da una somma di termini dell'hamiltoniano,
+i quali, applicati a $\Psi_m^{(0)}$, generano funzioni appartenenti ai vari
+spazi $S_l^k$. Nel complesso, tali funzioni generano sottospazi di
+$S_l^k$, che indicheremo con $\overline{S}_l^k$.
+
+Ad esempio, l'operatore $\perturb^{(+1)}$, che rappresenta la componente
+perturbativa il cui effetto \`e di promuovere un elettrone dagli orbitali di
+core a quelli attivi e un altro elettrone dagli orbitali di core ai
+virtuali, sar\`a
+\beq
+\perturb^{(+1)} = \sumidx{i<j} \sumidx{r} \sumidx{a} \interact{ra}{ji}
+\constr{r}\constr{a}\destr{i}\destr{j} = \sumidx{i<j}\sumidx{r}
+\perturb_{ijr}^{(+1)}
+\eeq
+e ciascuno degli elementi di $\perturb_{ijr}^{(+1)}$ genera funzioni del
+tipo $\ket{\Phi_l^{-1} \constr{a} \Psi_{m}^{v}}$ che appartengono allo spazio
+$S_l^{(+1)}$. Il set di funzioni $\left\{ \ket{\Phi_l^{-1} \constr{a} \Psi_{m}^{v}} \right\}$
+genera uno spazio $\overline{S}_l^{+1}$ la cui dimensionalit\`a \`e uguale
+al numero degli orbitali attivi. La diagonalizzazione dell'hamiltoniano
+completo o di Dyall in ciascuno di questi sottospazi fornisce le funzioni
+perturbatrici necessarie, ottimizzate variazionalmente, e le relative
+energie. Tale risoluzione pu\`o essere applicata a qualsiasi componente sopra
+presentato, e generer\`a funzioni che apparterranno ad opportuni sottospazi.
+
+Una particolarit\`a \`e fornita dall'operatore $\perturb_{ijrs}^{(0)}$. Lo
+spazio ridotto $\overline{S}_l^{0}$, per una data scelta degli indici $i,j,r,s$,
+contiene una sola funzione
+significativa per il calcolo perturbativo, che descrive una doppia eccitazione
+dallo spazio di core allo spazio virtuale. 
+L'energia associata a tale funzione perturbatrice quando si adoperi
+l'hamiltoniano di Dyall non \`e altro che l'energia della funzione CAS
+corretta con l'aggiunta del termine $\epsilon_r + \epsilon_s - \epsilon_i -\epsilon_j$,
+ovvero la differenza delle energie degli orbitali interessati all'eccitazione.
+
+La correzione perturbativa al primo ordine della funzione d'onda
+per tale caso sar\`a data da
+\beqa
+\Psi_{m}^{(1)}(\perturb^{(0)}) &=& - \sumidx{i<j} \sumidx{r<s} 
+\ket{\constr{r}\constr{s}\destr{i}\destr{j} \Phi_{c} \Psi_m^v} \nonumber \\
+& & \times \frac{\braket{\constr{r}\constr{s}\destr{i}\destr{j} \Phi_{c}
+\Psi_m^v}{\ham}{\Psi_m^{(0)}}}{\epsilon_r + \epsilon_s - \epsilon_i
+- \epsilon_j}
+\eeqa
+
+e conseguentemente la correzione al secondo ordine per l'energia sar\`a data
+dal valore
+\beq
+\braket{\Psi_{m}^{(0)}}{\ham}{\Psi_{m}^{(1)}(\perturb^{(0)})}
+\eeq
+ovvero
+\beq
+E_{m}^{(2)}(\perturb^{(0)}) = - \sumidx{i<j} \sumidx{r<s} \frac{\left| \left< rs \left|
+\right| ji \right> \right|^2}{\epsilon_r + \epsilon_s -
+\epsilon_i-\epsilon_j}
+\eeq
+
+che non \`e altro che il contributo M{\o}ller-Plesset MP2, nel caso di una funzione HF.
+La teoria NEV-PT di conseguenza si riduce ad una trattazione M{\o}ller-Plesset
+nel momento in cui lo spazio attivo non esista (come nel caso
+dell'approssimazione monodeterminantale,
+a cui la perturbazione MP2 fa riferimento).
+
+Nel caso dei termini di $\perturb$ che coinvolgano lo spazio attivo, la
+trattazione \`e pi\`u complessa. Le funzioni saranno del tipo $\ket{\constr{r}
+\destr{i}\destr{j}\Phi_c \Psi_{\mu}^{(+1)}}$, dove la parte attiva \`e
+caratterizzata da un elettrone in pi\`u rispetto alla funzione CAS.
+La correzione alla funzione d'onda al primo ordine sar\`a
+\beqa
+\Psi_{m}^{(1)}(\perturb^{(+1)}) &=& - \sumidx{i<j} \sumidx{r} \sumidx{\mu}
+\ket{\constr{r}\destr{i}\destr{j}\Phi_c \Psi_{\mu}^{(+1)}} \nonumber \\ 
+&\times& \frac{\braket{\constr{r}\destr{i}\destr{j}\Phi_c \Psi_{\mu}^{(+1)}}{\ham}{\Psi_m^{(0)}}}{E_{\mu}^{(+1)} - E_m^{(0)} + \epsilon_r - \epsilon_i - \epsilon_j}
+\eeqa
+
+Si dovr\`a quindi calcolare una interazione del tipo
+\beq
+\braket{\constr{r}\destr{i}\destr{j}\Phi_c\Psi_{\mu}^{(+1)}}
+{\ham}{\Psi_m^{(0)}}
+\eeq
+
+Siccome l'interazione avviene esclusivamente attraverso
+il termine perturbatore, risulter\`a
+\beq
+\braket{\constr{r}\destr{i}\destr{j}\Phi_c\Psi_{\mu}^{(+1)}} {\perturb^{(+1)}_{ijr}}{\Psi_m^{(0)}}
+\eeq
+dalla quale, per svolgimento dell'operatore e dopo alcuni passaggi, si
+otterr\`a
+\beqas
+\integral{\constr{r}\destr{i}\destr{j}\Phi_c\Psi_{\mu}^{(+1)}}{\sumidx{a}\interact{ra}{ji}\constr{r}\destr{i}\destr{j}\Phi_c\constr{a}\Psi_m^v} = 
+\eeqas
+\beqa
+&=& \sumidx{a} \interact{ra}{ji} \integral{\Psi_\mu^{(+1)}}{\constr{a}\Psi_m^v} \nonumber \\
+&=& \sumidx{a} \interact{ra}{ji} S_{\mu a} \stackrel{\mbox{\tiny def}}{=}
+\interact{r\mu}{ji}
+\eeqa
+
+Nella formula precedente, il termine $\sumidx{a} \interact{ra}{ji} S_{\mu a}$ \`e stato ridotto
+ad un solo integrale bielettronico efficace che coinvolge una ``quasi-particella'' nella valenza.
+Di conseguenza, tale termine pu\`o essere scritto tramite il semplice integrale
+$\interact{r\mu}{ji}$ e la correzione perturbativa al secondo ordine 
+sull'energia sar\`a
+\beq
+E_{(+1),m}^{(2)} = - \sumidx{i<j} \sumidx{r} \sumidx{\mu}
+\frac{\left| \interact{r\mu}{ji} \right| ^2}{E^{(+1)}_{\mu} - E_m^{(0)} + \epsilon_r -
+\epsilon_i - \epsilon_j }
+\eeq
+
+Analogamente, gli altri contributi rappresentano l'inserimento di
+``quasi-buche'' o ``quasi-coppie'' all'interno dello strato di valenza.
+Si otterranno quindi una serie di contributi all'energia per la correzione
+perturbativa, che saranno centrali nell'analisi dei dati attuata nel
+seguito di questa tesi.
+
+\subsection{Approccio strongly contracted}
+
+Un'ulteriore semplificazione pu\`o essere introdotta riducendo ancora la 
+dimensione dello spazio perturbativo. Ogni termine $\hat{\mathcal{V}}$,
+come \`e stato visto in precedenza, genera un sottospazio perturbativo la
+cui dimensione dipende in modo diretto da quella dello spazio attivo
+selezionato. \`E tuttavia possibile utilizzare gli operatori perturbativi in
+modo da fornire una sola funzione appartenente a ciascuno
+spazio, ed attuare la trattazione esclusivamente con tali funzioni.
+
+Al fine di ottenere ci\`o, nel caso di esempio $\perturb^{(+1)}$, avremo
+\beq
+\ket{\phi_{ijr}} = \perturb_{ijr}^{(+1)} \ket{\Psi_m^{(0)}} = \constr{r}
+\destr{i} \destr{j} \Phi_c \sumidx{a}\interact{ra}{ji} \constr{a}
+\Psi^{v}_{m}
+\eeq
+
+Questa funzione d'onda, generalmente non normalizzata, definisce uno spazio
+monodimensionale $\tilde{S}_l^k$ che sar\`a considerato al fine della
+trattazione perturbativa per la parte $\perturb^{(+1)}$.
+La norma di tale funzione assume un significato molto importante, in quanto
+\`e direttamente implicata nel trattamento perturbativo, e pu\`o facilmente
+essere ottenuta da:
+\beqa
+N_{ijr} = \integral{\phi_{ijr}}{\phi_{ijr}} &=& \left( \sumidx{a} \interact{ra}{ji}
+\ket{\constr{a}\Psi_m^{v}} \right) \left( \sumidx{b} \interact{rb}{ji}
+\ket{\constr{b}\Psi_m^v} \right) \nonumber \\
+&=& \sumidx{ab} \interact{ra}{ji} \integral{\constr{a} \Psi_m^v}{\constr{b}
+\Psi_m^v} \interact{rb}{ji} \nonumber \\
+&=& \sumidx{ab} \interact{ra}{ji} \tilde{\rho}_{ba} \interact{rb}{ji}
+\eeqa
+dove $\tilde{\rho}_{ba} =
+\braket{\Psi_m^{(0)}}{\destr{a}\constr{b}}{\Psi_m^{(0)}}$ \`e la matrice
+densit\`a ad una buca (legata alla matrice densit\`a ad una particella dalla
+relazione $\tilde{\rho}_{ba} = \delta_{ab} - \rho_{ab}$)
+
+Quindi la funzione d'onda normalizzata sar\`a data da 
+\beq
+\ket{\phi_{ijr}^{\prime}} = \frac{1}{\sqrt{N_{ijr}}} \ket{\phi_{ijr}}
+\eeq
+
+Da questa \`e possibile ricavare i coefficienti della correzione perturbativa
+al primo ordine:
+\beqa
+C_{ijr}^{(1)} &=& \frac{\braket{\phi^{\prime}_{ijr}}{\ham}{\Psi_m^{(0)}}}{E_m^{(0)} - E_{ijr}} \nonumber \\
+&=& \frac{\braket{\phi^{\prime}_{ijr}}{\perturb_{ijr}^{(+1)}}{\Psi_m^{(0)}}}{E_m^{(0)} - E_{ijr}} \nonumber \\
+&=& \frac{\integral{\phi^{\prime}_{ijr}}{\phi_{ijr}}}{E_m^{(0)} - E_{ijr}} \nonumber \\
+&=& \frac{\sqrt{N_{ijr}}}{E_m^{(0)} - E_{ijr}}
+\eeqa
+e di conseguenza la correzione perturbativa all'energia
+\beq
+E_m^{(2)} = \frac{N_{ijr}}{E_m^{(0)} - E_{ijr}}
+\eeq
+dove il termine $E_{ijr}$ \`e il valore medio dell'hamiltoniano di Dyall
+nella funzione $\ket{\phi^{\prime}_{ijr}}$.
+

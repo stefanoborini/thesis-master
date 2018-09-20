@@ -1,0 +1,146 @@
+\subsection{Benzene}
+
+La molecola di benzene, di simmetria D$_{6h}$ \`e stata caratterizzata nello
+stato fondamentale e negli stati eccitati di singoletto appartenenti alle rappresentazioni
+B$_{2u}$ e B$_{1u}$. A causa di imposizioni del programma \texttt{dalton},
+si \`e lavorato con il sottogruppo D$_{2h}$.
+
+Inizialmente si \`e condotto un calcolo esplorativo, su base 6-31G* con spazio
+CAS 6/6 definito dagli orbitali $\pi$ e dai corrispondenti $\pistar$. Tale
+calcolo ha fornito geometrie e valutazioni degli orbitali e delle loro
+simmetrie.
+
+In seguito, per affinare i risultati, si \`e provveduto ad effettuare altre
+valutazioni, passando quindi alla base ano-1 definita 3s2p1d per il carbonio
+e 2s1p per l'idrogeno, sia con il medesimo spazio CAS sopra descritto, sia
+con uno spazio CAS ampliato, ottenuto raddoppiando gli orbitali per ogni
+simmetria, e passando di conseguenza ad un CAS 6/12.
+
+La molecola \`e stata posta sul piano $xy$, con l'asse principale orientato
+lungo l'asse $z$.
+
+I ben noti orbitali $\pi$ del benzene, orbitali che faranno parte dello
+spazio attivo non espanso, in simmetria D$_{6h}$ sono assegnabili alle
+rappresentazioni A$_{2u}$, E$_{1g}$, E$_{2u}$ e B$_{2g}$. In simmetria
+D$_{2h}$ tali rappresentazioni si trasformano, rispettivamente e ricordando
+che le rappresentazioni E sono bidimensionali, in B$_{1u}$, B$_{2g}$,
+B$_{3g}$, B$_{1u}$, A$_{u}$ e B$_{2g}$. Gli orbitali appartenenti alle prime
+tre rappresentazioni sono occupati.
+Sempre in seguito alla diminuzione di simmetria, gli stati eccitati su cui
+verranno effettuate valutazioni apparterranno, in simmetria D$_{2h}$,
+alle rappresentazioni B$_{2u}$ e B$_{3u}$, anzich\'e B$_{2u}$ e B$_{1u}$,
+rispettivamente, per la simmetria D$_{6h}$.
+
+Le geometrie molecolari sono state ottimizzate nelle varie condizioni
+operative. Nella tabella \ref{tab:benzene_geom} sono messe a confronto le
+geometrie ottenute per via teorica con il dato sperimentale
+\begin{center}
+\begin{threeparttable}
+\caption{\small Benzene - geometrie su diversi metodi/basi}
+\label{tab:benzene_geom}
+\small
+\begin{tabular}{|l|c|c|}
+\hline
+							& R$_{CC}$		& R$_{CH}$ \\ 
+\hline
+CASSCF 6/6 / 6-31G*			& 1.396			&	1.075	 \\
+CASSCF 6/6 / ano-1			& 1.398			&	1.080	 \\
+CASSCF 6/12 / ano-1			& 1.398			&	1.081    \\
+Exp.\tnote{1}				& 1.390			&	1.086    \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\small
+ \item[1] Cfr. \cite{jms-148-1991-427}
+ \item[] Valori in Angstroms
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+
+\subsubsection{Eccitazione B$_{2u}$ (B$_{2u}$ in D$_{2h}$)}
+
+La transizione elettronica B$_{2u}$ \`e quella a minore energia. Analisi
+sperimentali (Cfr. \cite{jcp-94-12-1991-7700}) forniscono per questa
+transizione un valore di 4.90 eV, anche se in realt\`a lo spettro in fase gas
+e jet-cooled forniscono un inviluppo vibrazionale che va da 4.79 eV
+(transizione 0-0) fino a 5.35 eV, con un picco di massimo assorbimento
+proprio a 4.90 eV, scelto come riferimento per la transizione Franck-Condon.
+
+La tabella \ref{tab:benzene_b2u} mostra i risultati ottenuti con la
+trattazione effettuata.
+\begin{center}
+\begin{threeparttable}
+\caption{\small Benzene - Energia della transizione di singoletto B$_{2u}$
+(B$_{2u}$ in D$_{2h}$)}
+\label{tab:benzene_b2u}
+{
+\small
+\begin{tabular}{|c|ccc|ccc|}
+\hline
+ 				& \multicolumn{3}{c|}{GS\tnote{1}}				& \multicolumn{3}{c|}{Ecc. B$_{2u}$\tnote{2}} \\
+				& CASSCF	& NEV-PT	& NEV-PT	& CASSCF		& NEV-PT	& NEV-PT \\
+				&			& SC		& PC		& 				& SC		& PC \\
+\hline
+CAS(6,6)/6-31G*	& 0.775778	& 1.468765	& 1.469361	& 4.99			& 5.33		& 5.31		\\
+CAS(6,6)/ano-1	& 0.830416	& 1.558968	& 1.559728	& 4.92			& 5.22		& 5.20		\\
+CAS(6,12)/ano-1	& 0.844274	& 1.558662	& 1.564030	& 4.92			& 5.17		& 5.19		\\
+\hline
+\hline
+Exp.\tnote{3}	&				& 				&				& \multicolumn{3}{c|}{4.90} \\
+\hline
+\end{tabular}
+}
+\begin{tablenotes}
+\small
+ \item[1] Energia come \mbox{-(230 + valore)} Hartree
+ \item[2] Valori in eV
+ \item[3] Cfr. \cite{jcp-94-12-1991-7700}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+
+Apparentemente quindi, il risultato CASSCF \`e in buon accordo con il dato
+sperimentale, e la trattazione perturbativa attua un allontanamento dal
+valore esatto. Tuttavia, la Ref. \cite{jcp-112-6-2000-2798} sottolinea come
+la differenza tra la transizione 0-0 ed il massimo della banda sia 0.19 eV,
+mentre sui valori calcolati la differenza tra la transizione 0-0 e la
+verticale \`e di 0.31 eV. Di conseguenza, il massimo della banda \`e spostato
+di 0.12 eV pi\`u in basso rispetto all'energia verticale Franck-Condon.
+Questo implica che il valore sperimentale di 4.90 eV comporta, per la
+transizione verticale, un posizionamento a 5.02 eV, in migliore accordo
+con i dati ottenuti a livello perturbativo.
+
+\subsubsection{Eccitazione B$_{1u}$ (B$_{3u}$ in D$_{2h}$)}
+
+La transizione B$_{1u}$ viene stimata attorno ai 6.20 eV (Cfr.
+\cite{jcp-112-6-2000-2798} e \cite{tca-91-1995-91}). La tabella
+\ref{tab:benzene_b1u} mostra i dati ottenuti
+\begin{center}
+\begin{threeparttable}
+\caption{\small Benzene - Energia della transizione di simmetria B$_{1u}$
+(B$_{3u}$ in D$_{2h}$)}
+\label{tab:benzene_b1u}
+{
+\small
+\begin{tabular}{|c|ccc|}
+\hline
+ 				& \multicolumn{3}{c|}{ Ecc. B$_{1u}$\tnote{2}} \\
+				& CASSCF		& NEV-PT/SC & NEV-PT/PC \\
+\hline
+CAS(6,6)/6-31G*	&  8.18			& 6.75		& 6.71		\\
+CAS(6,6)/ano-1	&  7.87			& 6.33 		& 6.26		\\
+CAS(6,12)/ano-1	&  7.46			& 6.54		& 6.50		\\
+\hline
+\hline
+Exp.\tnote{3}	&	 \multicolumn{3}{c|}{6.20} \\
+\hline
+\end{tabular}
+}
+\begin{tablenotes}
+\small
+ \item[1] Valori in Hartree
+ \item[2] Valori in eV
+ \item[3] Cfr. \cite{jcp-112-6-2000-2798} e \cite{tca-91-1995-91}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}

@@ -1,0 +1,103 @@
+\section{Teoria della perturbazione}
+\label{sec:perturbazione}
+
+Sia dato l'hamiltoniano vero $\ham$. \`E possibile esprimere tale hamiltoniano come
+una espansione di Taylor interrotta al primo termine
+\beq
+\label{eqn:pert1}
+\ham = \ham^{(0)} + \lambda \hat{V}
+\eeq
+dove $\ham^{(0)}$ \`e un hamiltoniano modello, $\lambda$ \`e un parametro numerico che
+esprime l'intensit\`a dell'effetto perturbativo e $\hat{V}$ \`e un
+operatore perturbativo.
+
+Nell'ipotesi di conoscere tutti gli autovalori e autovettori dell'hamiltoniano modello
+$\ham^{(0)}$, ovvero di conoscerne la sua decomposizione spettrale, si avr\`a
+\beq
+\label{eqn:pert2}
+\ham^{(0)} \Psi_n^{(0)} = E_n^{(0)} \Psi_n^{(0)} \quad n=0,1,2,\ldots
+\eeq
+dove le $\Psi_n^{(0)}$ (abbreviate in $\ket{n}$) costituiscono una base
+completa di funzioni d'onda.
+
+Ovviamente, in assenza di azione perturbativa la funzione descrittiva per lo stato
+$n$ sar\`a $\Psi_n^{(0)}$ e la sua energia $E_n^{(0)}$, come indicato
+dall'equazione \ref{eqn:pert2}. In seguito alla perturbazione, la descrizione
+dello stato e dell'energia cambieranno, e saranno funzioni del parametro
+perturbativo $\lambda$: per la funzione d'onda sar\`a
+\beq
+\label{eqn:pert2-1}
+\Psi_n = \Psi_n^{(0)} + \lambda \Psi_n^{(1)} + \lambda^2 \Psi_n^{(2)} + \ldots
+\eeq
+e per l'energia
+\beq
+\label{eqn:pert2-2}
+E_n = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \ldots
+\eeq
+ovvero espansioni di Taylor sul parametro $\lambda$.
+
+Dal momento che l'equazione di cui si ricerca soluzione \`e
+\beq
+\ham \Psi_n = E_n \Psi_n
+\eeq
+attraverso opportuna sostituzione, utilizzando le relazioni \ref{eqn:pert2-1}
+e \ref{eqn:pert2-2} e successivamente raccogliendo le potenze di $\lambda^n$
+si ottiene
+\beqa
+& & \lambda^0 \left( \ham^{(0)} \Psi_n^{(0)} - E_n^{(0)} \Psi_n^{(0)} \right) \nonumber \\ 
+&+& \lambda^1 \left( \ham^{(0)} \Psi_n^{(1)} + \hat{V} \Psi_n^{(0)} - E_n^{(0)} \Psi_n^{(1)} - E_n^{(1)} \Psi_n^{(0)} \right) \nonumber \\
+&+& \lambda^2 \left( \ham^{(0)}\Psi_n^{(2)} + \hat{V}\Psi_n^{(1)} - E_n^{(0)} \Psi_n^{(2)} - E_n^{(1)} \Psi_n^{(1)} - E_n^{(2)} \Psi_n^{(0)} \right) \nonumber \\
+&+& \ldots = 0
+\eeqa
+Affinch\'e tale uguaglianza sia soddisfatta, \`e necessario che ogni coefficiente di $\lambda$ sia nullo.
+Ne risultano quindi le seguenti equazioni
+\beqa
+\label{eqn:pert3}
+\ham^{(0)} \Psi_n^{(0)} &=& E_n^{(0)} \Psi_n^{(0)} \\
+\label{eqn:pert4}
+\left( \ham^{(0)} - E_n^{(0)} \right) \Psi_n^{(1)} &=& \left( E_n^{(1)} - \hat{V} \right) \Psi_n^{(0)} \\
+\label{eqn:pert5}
+\left( \ham^{(0)} - E_n^{(0)} \right) \Psi_n^{(2)} &=& \! E_n^{(2)} \Psi_n^{(0)} \! + \left( E_n^{(1)} - \hat{V} \right) \Psi_n^{(1)} \\
+& \vdots & \nonumber
+\eeqa
+La soluzione dell'equazione \ref{eqn:pert3} \`e conosciuta e fornisce l'ordine zero della perturbazione.
+L'equazione \ref{eqn:pert4} rende invece conto della correzione perturbativa al prim'ordine della
+funzione. 
+\`E possibile esprimere la correzione al primo ordine $\Psi_n^{(1)}$ come 
+combinazione lineare di funzioni all'ordine zero, in quanto tale set
+\`e una base per lo spazio funzionale trattato. Di conseguenza
+\beq
+\Psi_n^{(1)} = \sumidx{k}c_k \Psi_k^{(0)}
+\eeq
+Sostituendo questa espressione nell'equazione \ref{eqn:pert4} si ottiene
+\beqa
+\sumidx{k} c_k \left( \ham^{(0)} - E_n^{(0)} \right) \ket{k} &=& \left( E_n^{(1)} - \hat{V} \right) \ket{n} \nonumber \\
+\label{eqn:pert6}
+\sumidx{k} c_k \left( E_k^{(0)} - E_n^{(0)} \right) \ket{k} &=& \left( E_n^{(1)} - \hat{V} \right) \ket{n}
+\eeqa
+ed applicando ora il bra $\bra{n}$
+\beqa
+\sumidx{k} c_k \left( E_k^{(0)} - E_n^{(0)} \right) \delta_{nk} &=& E_n^{(1)} - \braket{n}{\hat{V}}{n} \nonumber \\
+0 &=& E_n^{(1)} - \braket{n}{\hat{V}}{n} \nonumber \\
+E_n^{(1)} &=& \braket{n}{\hat{V}}{n}
+\eeqa
+si ottiene la correzione dell'energia al primo ordine.
+
+Per ottenere la correzione della funzione d'onda al primo ordine, \`e sufficiente applicare il bra $\bra{l}$,
+con $l$ generico diverso da $\bra{n}$, all'equazione \ref{eqn:pert6}
+\beqa
+\sumidx{k} c_k \left( E_k^{(0)} - E_n^{(0)} \right) \delta_{kl} &=& E_n^{(1)} \integral{l}{n} - \braket{l}{\hat{V}}{n} \nonumber \\
+c_l \left( E_l^{(0)} - E_n^{(0)} \right) &=& - \braket{l}{\hat{V}}{n} \nonumber \\
+\label{eqn:pert7}
+c_l &=& \frac{\braket{l}{\hat{V}}{n}}{E_n^{(0)} - E_l^{(0)}}
+\eeqa
+L'espressione \ref{eqn:pert7} \`e limitata a casi non degeneri (nel qual caso $E_n^{(0)} - E_l^{(0)}$ potrebbe essere $0$ per $l \neq n$).
+
+Si otterr\`a una migliore rappresentazione della funzione $\Psi_n$
+\beq
+\Psi_n = \Psi_n^{(0)} + \sumidx{k \neq n} \left( \frac{\braket{k}{\hat{V}}{n}}{E_n^{(0)} - E_k^{(0)}} \right) \Psi_k^{(0)}
+\eeq
+L'effetto perturbativo di conseguenza introduce, per meglio descrivere la funzione
+d'onda, dei livelli eccitati appartenenti all'ordine zero secondo degli
+opportuni coefficienti.
+

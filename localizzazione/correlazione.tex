@@ -1,0 +1,48 @@
+\section{Dimensionalita' dello spazio CAS}
+
+Come detto, per attuare una correzione all'energia HF di una molecola, e' necessario
+considerare la funzione d'onda CAS costituita partizionando il set di spinorbitali
+in tre insiemi, core, attivi e virtuali, e di attuare uno sviluppo multiconfigurazionale
+negli orbitali attivi. Portando al limite tale espansione, si raggiunge la massima 
+accuratezza possibile sul set di spinorbitali e sulla dimensionalita' scelta, 
+e si parla in tal caso di Full CI.
+
+La dimensione di uno spazio CAS e' espressione combinatoriale del numero di elettroni $n_a$
+e del numero di orbitali attivi $N_a$. Trattandosi di una combinazione semplice di $N_a$ oggetti
+di classe $n_a$, risulta che lo spazio CAS e' dato dal coefficiente binomiale 
+\beqas
+\left( 
+\begin{array}{c}
+N_a \\
+n_a
+\end{array}
+\right)
+= \frac{N_a !}{n_a ! \left( N_a - n_a \right)!}
+\eeqas
+
+Trascurando eventuali simmetrie, tale spazio diventa computazionalmente non trattabile
+gia' su sistemi piccoli, e cio' limita l'applicabilita' di tale metodo. Inoltre, 
+l'utilizzo di uno spazio CAS consente solamente la corretta descrizione dell'andamento
+dissociativo (correlazione non dinamica) ma non consente accuratezza spettroscopica,
+in quanto gli effetti di correlazione dinamica vengono trascurati, fornendo una curva
+energetica traslata rispetto alla curva sperimentale.
+Per tenere conto di tali effetti, occorrerebbe procedere all'inclusione di termini
+almeno singolarmente e doppiamente eccitati rispetto al livello MC, e questo comporta
+un ulteriore aumento della complessita' computazionale.
+
+Una possibile soluzione a questi inconvenienti e' considerare una trattazione
+localizzata: attraverso una opportuna trasformazione unitaria degli orbitali
+delocalizzati MO, si ottiene un nuovo set che descrive la molecola in termini
+di:
+\begin{itemize}
+\item Determinanti neutri A$^{(0)}\ldots$B$^{(0)}$
+\item Determinanti singolarmente ionici A$^{(+1)}\ldots$B$^{(-1)}$ o A$^{(-1)}\ldots$B$^{(+1)}$ 
+\item Determinanti multiplamente ionici A$^{(+p)}\ldots$B$^{(-p)}$ o A$^{(-p)}\ldots$B$^{(+p)}$
+\end{itemize}
+E' logico aspettarsi che i determinanti neutri e i singolarmente ionici siano quelli
+a maggior peso nella rappresentazione della molecola, in quanto sono quelli a minore
+energia. Per questa ragione, sara' possibile (entro certi limiti) trascurare i contributi
+multiplamente ionici riducendo in questo modo la complessita' computazionale del problema.
+
+
+

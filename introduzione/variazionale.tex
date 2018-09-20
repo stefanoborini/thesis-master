@@ -1,0 +1,60 @@
+% DONE
+\section{Principio variazionale}
+
+Sia $\tilde{\Psi}$ una funzione d'onda arbitraria e si definisca il rapporto
+\beq
+\label{eqn:varia1}
+\epsilon = \frac{\braket{\tilde{\Psi}}{\ham}{\tilde{\Psi}}}{\integral{\tilde{\Psi}}{\tilde{\Psi}}}
+\eeq
+
+Secondo il teorema variazionale, l'energia $E_0$, autovalore dello stato fondamentale $\Psi_0$ sull'hamiltoniano,
+\`e un limite inferiore per $\epsilon$. In altri termini vale
+\beq
+\epsilon \ge E_0 \quad \forall \tilde{\Psi} \quad \mbox{,} \quad \epsilon = E_0 \Leftrightarrow
+\tilde{\Psi} = \Psi_{0}
+\eeq
+
+Il teorema \`e facilmente dimostrabile, e per la dimostrazione rimandiamo ad
+un qualsiasi testo di chimica quantistica (ad esempio \cite{szabo-mqc}), ed
+che, scelta una generica funzione $\tilde{\Psi}$, l'energia calcolata
+da essa sar\`a maggiore (o eventualmente uguale, se la funzione $\tilde{\Psi}$ \`e la giusta funzione
+per lo stato considerato) dell'energia vera.
+Di conseguenza, una volta parametrizzata la funzione $\tilde{\Psi}$, \`e possibile ottimizzare tali
+parametri in modo da rendere minima la differenza tra il valore di energia ottenuto e il valore vero.
+Data una parametrizzazione sui coefficienti $c_i$ su un set di funzioni base $\Phi_i$, la funzione
+$\tilde{\Psi}$ sar\`a espressa come 
+\beq
+\label{eqn:varia1_1}
+\tilde{\Psi} = \sumidx{i}c_i\Phi_i
+\eeq
+e la condizione di minimizzazione tale da soddisfare il teorema variazionale sar\`a
+\beq
+\dpartfrac{\epsilon}{c_i} = 0 \quad \forall i
+\eeq
+quindi, supponendo $c_i$ reali
+\beqa
+\epsilon &=& \frac{\sumidx{i,j} c_i c_j \braket{\Phi_i}{\ham}{\Phi_j}}{\sumidx{i,j} c_i c_j \integral{\Phi_i}{\Phi_j}} \nonumber \\
+&=& \frac{\sumidx{i,j} c_i c_j H_{ij}}{\sumidx{i,j} c_i c_j S_{ij}}
+\eeqa
+Differenziando ora rispetto ad un generico $c_k$ si ha
+\beqa
+\dpartfrac{\epsilon}{c_k} &=& \frac{\sumidx{j}c_j H_{kj} + \sumidx{i}c_i H_{ik} }{\sumidx{i,j}c_i c_j S_{ij}} - \frac{\left( \sumidx{j}c_j S_{kj} + \sumidx{i} c_i S_{ik} \right) \sumidx{i,j} c_i c_j H_{ij}}{\left( \sumidx{i,j} c_i c_j S_{ij} \right)^2} \nonumber \\
+&=& \frac{\sumidx{j}c_j \left( H_{kj} - \epsilon S_{kj} \right)}{\sumidx{i,j}c_i c_j S_{ij}} + \frac{\sumidx{i}c_i \left( H_{ik} - \epsilon S_{ik} \right)}{\sumidx{i,j}c_i c_j S_{ij}} = 0
+\eeqa
+Questa relazione \`e soddisfatta se i numeratori sono nulli, ovvero quando
+\beq
+\sumidx{i}c_i \left( H_{ki} - \epsilon S_{ki} \right) = 0
+\eeq
+che in notazione matriciale diventa
+\beq
+\label{eqn:varia2}
+\mathbf{H}\mathbf{c} = \epsilon \mathbf{S} \mathbf{c}
+\eeq
+Il vettore colonna $\mathbf{c}$ rappresenta una combinazione lineare della base iniziale
+(v.~\ref{eqn:varia1_1}) che fornisce il valore minimo di energia, secondo il
+teorema variazionale. Un ulteriore teorema garantisce che ognuna delle
+soluzioni $\epsilon_i$ ottenute dalla risoluzione
+del sistema \ref{eqn:varia2} \`e un limite superiore per lo stato $E_i$. Lo stato
+fondamentale \`e un caso particolare di tale teorema, in cui $\epsilon_0$
+\`e il limite superiore dell'energia vera dello stato fondamentale $E_0$.
+
